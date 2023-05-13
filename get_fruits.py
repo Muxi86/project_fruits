@@ -11,7 +11,7 @@ def get_fruits(file_path: str):
     
     ans = []
     for row in rows:
-        ans.append(row.split(',')[0])
+        ans.append(row)
     return ans
 
 file_path = open('fruits.csv').read()
