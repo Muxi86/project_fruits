@@ -12,7 +12,7 @@ def get_fruits(file_path: str):
     ans = []
     for row in rows:
         ans.append(row.split(',')[0])
-    return ans, type(ans)
+    return ans
 
 file_path = open('fruits.csv').read()
 print(get_fruits(file_path))
