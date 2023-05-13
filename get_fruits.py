@@ -1,3 +1,4 @@
+import csv
 def get_fruits(file_path: str):
     """
     Reads the file file_path and returns a list of fruits
@@ -7,12 +8,12 @@ def get_fruits(file_path: str):
     Returns:
         list: list of fruits
     """
-    rows = file_path.split('\n')[1:]
-    
+    reader = csv.reader(open(file_path))
+    next(reader)
+
     ans = []
-    for row in rows:
+    for row in reader:
         ans.append(row)
     return ans
 
-file_path = open('fruits.csv').read()
-print(get_fruits(file_path))
+print(get_fruits('fruits.csv'))
