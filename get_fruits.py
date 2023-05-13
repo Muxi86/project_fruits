@@ -7,4 +7,12 @@ def get_fruits(file_path: str):
     Returns:
         list: list of fruits
     """
-    return
+    rows = file_path.split('\n')[1:]
+    
+    ans = []
+    for row in rows:
+        ans.append(row.split(',')[0])
+    return ans, type(ans)
+
+file_path = open('fruits.csv').read()
+print(get_fruits(file_path))
