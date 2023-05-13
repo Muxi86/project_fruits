@@ -9,15 +9,12 @@ def get_expensive_fruit(data: str) -> str:
         str: name of the most expensive fruit
     """
     # your code here
-    data = open(data)
-    reader = csv.reader(data)
+    reader = csv.reader(open(data))
     next(reader)
     
     ans = []
     for row in reader:
-
-        ans.append(row[1])
-        
+        ans.append(float(row[1]))
     return max(ans)
 
 print(get_expensive_fruit('fruits.csv'))
