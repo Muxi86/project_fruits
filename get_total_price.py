@@ -10,9 +10,10 @@ def get_total_price(fname:str)->float:
     """
 
     data = open(fname)
-    reader = list(csv.reader(data))
+    reader = csv.reader(data)
+    next(reader)
     ans = 0
-    for row in reader[1:]:
+    for row in reader:
         ans += float(row[1])
     return ans
 
